@@ -46,26 +46,48 @@
 ```
 AI-Secure-Code-Review-Tool/
 │
-├── app.py                       ← Flask application entry point
-├── model.py                     ← LSTM model training & loading
-├── data_processing.py           ← Dataset preprocessing pipeline
-├── bandit_analysis.py           ← Bandit static analysis engine
-├── github_analysis.py           ← GitHub repo cloning & scanning
-├── severityCalculator.py        ← Severity threshold calculation
-├── utils.py                     ← ML inference & severity mapping
-├── requirements.txt             ← Python dependencies
-├── security_dataset.csv         ← Core training dataset
+├── app.py                        ← Flask application entry point
+├── model.py                      ← LSTM model training & loading
+├── data_processing.py            ← Dataset preprocessing pipeline
+├── bandit_analysis.py            ← Bandit static analysis engine
+├── github_analysis.py            ← GitHub repo cloning & scanning
+├── severityCalculator.py         ← Severity threshold calculation
+├── utils.py                      ← ML inference & severity mapping
+├── requirements.txt              ← Python dependencies
+├── security_dataset.csv          ← Core training dataset
 ├── expanded_security_dataset.csv ← Extended training dataset
-├── history.json                 ← Analysis history storage
+├── history.json                  ← Analysis history storage
 │
 └── templates/
-    ├── index.html               ← Main analysis interface
-    ├── report.html              ← Analysis results page
-    ├── ci_pipeline.html         ← GitHub CI pipeline page
-    └── history.html             ← Analysis history page
+    ├── index.html                ← Main analysis interface
+    ├── report.html               ← Analysis results page
+    ├── ci_pipeline.html          ← GitHub CI pipeline page
+    └── history.html              ← Analysis history page
 ```
 
+---
+
 ## 🧠 How the AI Model Works
+
+```
+Code Input
+    ↓
+Tokenization (Keras Tokenizer)
+    ↓
+Padding to fixed sequence length (100 tokens)
+    ↓
+LSTM Neural Network
+    ├── Embedding Layer (vocab_size → 128 dims)
+    ├── LSTM Layer (64 units)
+    ├── Dense Layer (64 units, ReLU)
+    └── Output Layer (4 units, Softmax)
+    ↓
+Probability Scores [Low, Medium, High, Critical]
+    ↓
+Adaptive Threshold Mapping
+    ↓
+Severity Classification + Suggested Fix
+```
 
 ### Severity Thresholds
 
@@ -82,7 +104,9 @@ AI-Secure-Code-Review-Tool/
 ## 🔍 Analysis Modes
 
 ### 1. ML Analysis
-Uses the trained LSTM neural network to classify each line of code by vulnerability severity. Checks against the security dataset for exact matches first, then uses model prediction.
+Uses the trained LSTM neural network to classify each line of code by
+vulnerability severity. Checks against the security dataset for exact
+matches first, then uses model prediction.
 
 ### 2. Bandit Analysis
 Runs Bandit static analysis on submitted code. Detects:
@@ -94,6 +118,19 @@ Runs Bandit static analysis on submitted code. Detects:
 - And 100+ more security checks
 
 ### 3. CI Pipeline (GitHub Integration)
+```
+GitHub URL Input
+    ↓
+Clone Repository (GitPython)
+    ↓
+Walk all .py files
+    ↓
+Run ML Analysis on each line
+    ↓
+Run Bandit Analysis on each file
+    ↓
+Combined Security Report
+```
 
 ---
 
@@ -126,6 +163,17 @@ python app.py
 ---
 
 ## 📦 Requirements
+
+```
+flask==2.3.3
+bandit==1.7.9
+tensorflow==2.15.0
+gitpython==3.1.41
+numpy==1.26.4
+pandas==2.1.4
+scikit-learn==1.3.2
+werkzeug==2.3.7
+```
 
 ---
 
