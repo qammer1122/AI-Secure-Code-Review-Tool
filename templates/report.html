@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Report - Secure Code Review Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ADE8F4;
+            font-family: 'Times', serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #023E8A;
+        }
+        .navbar-brand, .nav-link {
+            color: #f1faee !important;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: #CAF0F8 !important;
+        }
+        .container {
+            margin-top: 40px;
+            max-width: 1000px;
+        }
+        h1 {
+            font-weight: bold;
+            color: #003049;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .card {
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .badge-critical { background-color: #d00000; color: white; }
+        .badge-high     { background-color: #e85d04; color: white; }
+        .badge-medium   { background-color: #f48c06; color: white; }
+        .badge-low      { background-color: #2b9348; color: white; }
+        .code-cell {
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+            max-width: 350px;
+        }
+        .no-results {
+            text-align: center;
+            color: #555;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">Security Testing Tool</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ci_pipeline">CI Pipeline</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Code Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>{{ analysis_type }} Analysis Report</h1>
+
+        <div class="card">
+            {% if analysis_results %}
+                <p class="text-muted mb-3" style="color:#333 !important;">
+                    Found <strong>{{ analysis_results | length }}</strong> issue(s).
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Code</th>
+                                <th>Severity</th>
+                                <th>Suggested Fix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for result in analysis_results %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td class="code-cell">{{ result.code }}</td>
+                                <td>
+                                    {% set sev = result.severity | lower %}
+                                    <span class="badge badge-{{ sev }} p-2">{{ result.severity }}</span>
+                                </td>
+                                <td>{{ result.fixes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="no-results">
+                    <h5>✅ No security issues detected.</h5>
+                    <p>The submitted code passed all checks.</p>
+                </div>
+            {% endif %}
+
+            <a href="/" class="btn btn-primary mt-3">← Analyze Another</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

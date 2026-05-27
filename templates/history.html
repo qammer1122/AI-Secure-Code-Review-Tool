@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis History - Secure Code Review Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ADE8F4;
+            font-family: 'Times', serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #023E8A;
+        }
+        .navbar-brand, .nav-link {
+            color: #f1faee !important;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: #CAF0F8 !important;
+        }
+        .container {
+            margin-top: 40px;
+            max-width: 900px;
+        }
+        h1 {
+            font-weight: bold;
+            color: #003049;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .card {
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .history-timestamp {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .badge-type {
+            background-color: #023E8A;
+            color: white;
+        }
+        .no-history {
+            text-align: center;
+            color: #555;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">Security Testing Tool</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ci_pipeline">CI Pipeline</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Code Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Analysis History</h1>
+
+        {% if analysis_history %}
+            {% for entry in analysis_history | reverse %}
+            <div class="card">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge badge-type p-2">{{ entry.type }}</span>
+                    <span class="history-timestamp">{{ entry.timestamp }}</span>
+                </div>
+                {% if entry.repository is defined %}
+                    <p style="color:#333;"><strong>Repository:</strong> {{ entry.repository }}</p>
+                {% endif %}
+                <p style="color:#333;">
+                    <strong>Issues found:</strong> {{ entry.results | length }}
+                </p>
+                {% if entry.results %}
+                <div class="table-responsive">
+                    <table class="table table-sm table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Code</th>
+                                <th>Severity</th>
+                                <th>Fix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for result in entry.results %}
+                            <tr>
+                                <td style="font-family:monospace; font-size:0.8rem; word-break:break-all;">{{ result.code }}</td>
+                                <td>{{ result.severity }}</td>
+                                <td>{{ result.fixes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="card">
+                <div class="no-history">
+                    <h5>No analyses have been run yet.</h5>
+                    <a href="/" class="btn btn-primary mt-2">Run your first analysis</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
