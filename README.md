@@ -43,7 +43,27 @@
 
 ## 🏗️ Project Structure
 
----
+```
+AI-Secure-Code-Review-Tool/
+│
+├── app.py                       ← Flask application entry point
+├── model.py                     ← LSTM model training & loading
+├── data_processing.py           ← Dataset preprocessing pipeline
+├── bandit_analysis.py           ← Bandit static analysis engine
+├── github_analysis.py           ← GitHub repo cloning & scanning
+├── severityCalculator.py        ← Severity threshold calculation
+├── utils.py                     ← ML inference & severity mapping
+├── requirements.txt             ← Python dependencies
+├── security_dataset.csv         ← Core training dataset
+├── expanded_security_dataset.csv ← Extended training dataset
+├── history.json                 ← Analysis history storage
+│
+└── templates/
+    ├── index.html               ← Main analysis interface
+    ├── report.html              ← Analysis results page
+    ├── ci_pipeline.html         ← GitHub CI pipeline page
+    └── history.html             ← Analysis history page
+```
 
 ## 🧠 How the AI Model Works
 
