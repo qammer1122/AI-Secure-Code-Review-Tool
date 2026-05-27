@@ -1,0 +1,270 @@
+[
+    {
+        "type": "Bandit",
+        "results": []
+    },
+    {
+        "type": "Bandit",
+        "results": []
+    },
+    {
+        "type": "ML",
+        "results": [
+            {
+                "code": "<!DOCTYPE html>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "<html lang=\"en\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "<head>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "    <meta charset=\"UTF-8\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "    <title>Vulnerability Analysis - {{ analysis_type }} Analysis</title>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "</head>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "<body>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "    <div class=\"container mt-5\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        <h2 class=\"text-center\">Vulnerability Analysis - {{ analysis_type }} Analysis</h2>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        <table class=\"table table-striped table-bordered table-hover mt-3\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            <thead class=\"thead-dark\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                <tr>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <th scope=\"col\">Code</th>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <th scope=\"col\">Severity</th>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <th scope=\"col\">Suggested Fix</th>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                </tr>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            </thead>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            <tbody>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                {% for result in analysis_results %}\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                <tr>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <td>{{ result.code }}</td>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <td class=\"{% if result.severity == 'Critical' %}text-danger{% elif result.severity == 'High' %}text-warning{% elif result.severity == 'Medium' %}text-info{% else %}text-success{% endif %}\">{{ result.severity }}</td>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <td>{{ result.fixes }}</td>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                </tr>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                {% endfor %}\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            </tbody>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        </table>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        <!-- Code input form for another analysis -->\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        <div class=\"mt-5\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            <h4 class=\"text-center\">Enter another code to analyze:</h4>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            <form action=\"/upload_ml\" method=\"POST\" enctype=\"multipart/form-data\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                <div class=\"form-group\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <textarea name=\"code_input\" class=\"form-control\" rows=\"6\" placeholder=\"Enter code here...\"></textarea>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                </div>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                <div class=\"form-group\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <input type=\"file\" name=\"file\" class=\"form-control-file mb-3\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                </div>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                <div class=\"text-center\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <button type=\"submit\" class=\"btn btn-primary mt-3\">Analyze with ML</button>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                    <button type=\"submit\" formaction=\"/upload_bandit\" class=\"btn btn-secondary mt-3\">Analyze with Bandit</button>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "                </div>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            </form>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        </div>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        <!-- Button to go to the History page -->\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        <div class=\"text-center mt-4\">\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "            <a href=\"/history\" class=\"btn btn-info btn-lg\">View Analysis History</a>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "        </div>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "    </div>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "</body>\r",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            },
+            {
+                "code": "</html>",
+                "severity": "Critical",
+                "fixes": "No suggested fix available"
+            }
+        ]
+    }
+]

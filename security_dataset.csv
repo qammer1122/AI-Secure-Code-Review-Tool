@@ -1,0 +1,101 @@
+code,severity,fixes
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
+"user_input = input(""Enter username: "")",High,"user_input = sanitize_input(input(""Enter username: ""))"
+"cursor.execute(""SELECT * FROM users WHERE id="" + user_input)",Critical,"cursor.execute(""SELECT * FROM users WHERE id=?"", (user_input,))"
+"password = ""P@ssw0rd123""",Medium,password = get_password_from_env()
+"response = requests.get(""http://example.com"")",Low,"response = requests.get(""https://example.com"", verify=True)"
+"os.system(""rm -rf "" + user_input)",High,"os.system(""rm -rf "" + sanitize_input(user_input))"
+"config = {""db_password"": ""password123""}",Medium,"config = {""db_password"": get_password_from_env()}"
+"eval(""2 + 2"")",Critical,"eval_safe(""2 + 2"")"
+"os.system(""ping "" + host)",High,"os.system(""ping "" + sanitize_input(host))"
+"username = ""admin""",Low,username = get_username_from_config()
+"cursor.execute(""DELETE FROM accounts WHERE name='"" + name + ""'"")",Critical,"cursor.execute(""DELETE FROM accounts WHERE name=?"", (name,))"
